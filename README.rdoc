@@ -1,16 +1,47 @@
-= distance_measure
+= Distance Measures
 
-Description goes here.
+A bunch of distance measures that extend Array.
 
-== Note on Patches/Pull Requests
- 
-* Fork the project.
-* Make your feature addition or bug fix.
-* Add tests for it. This is important so I don't break it in a
-  future version unintentionally.
-* Commit, do not mess with rakefile, version, or history.
-  (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
-* Send me a pull request. Bonus points for topic branches.
+== Install
+
+  gem sources -a http://gemcutter.org
+  sudo gem install distance_measures
+  
+== How to use
+
+  a = [1,1]
+  b = [2,2]
+  
+  a.euclidean_distance(b)
+  
+  a.cosine_similarity(b)
+  
+  a.jaccard_index(b)
+  
+  a.jaccard_distance(b)
+  
+  a.binary_jaccard_index(b)
+  
+  a.binary_jaccard_distance(b)
+  
+  a.tanimoto_coefficient(b)
+  
+This may or may not be the complete list, best thing is to check the source code.
+  
+There are also a couple bonus methods:
+
+  a.dot_product(b)
+  
+  a.sum_of_squares
+  
+  a.intersection_with(b)
+  
+  a.union_with(b)
+  
+  # When your dealing with 1's and 0's
+  a.binary_intersection_with(b)
+  
+  a.binary_union_with(b)
 
 == Copyright
 
