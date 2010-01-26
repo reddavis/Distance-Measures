@@ -12,11 +12,19 @@ describe "DistanceMeasures" do
     it "should return 1.0" do
       array.cosine_similarity(array).should > 0.99
     end
+    
+    it "should handle NaN's" do
+      [0.0, 0.0].cosine_similarity([0.0, 0.0]).nan?.should be_false
+    end
   end
   
   describe "Tanimoto Coefficient" do
     it "should return 1.0" do
       array.tanimoto_coefficient(array).should == 1.0
+    end
+    
+    it "should handle NaN's" do
+      [0.0, 0.0].tanimoto_coefficient([0.0, 0.0]).nan?.should be_false
     end
   end
   

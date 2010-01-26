@@ -4,6 +4,6 @@ module DistanceMeasures
     dot_product = self.dot_product(other)
     normalization = self.euclidean_normalize * other.euclidean_normalize
         
-    dot_product / normalization
+    handle_nan(dot_product / normalization)
   end
 end
