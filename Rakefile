@@ -6,8 +6,8 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "distance_measures"
-    gem.summary = %Q{A bundle of distance measures}
-    gem.description = %Q{A bundle of distance measures}
+    gem.summary = %Q{A bundle of distance measures with C extensions for the slow bits}
+    gem.description = %Q{A bundle of distance measures with C extensions for the slow bits}
     gem.email = "reddavis@gmail.com"
     gem.homepage = "http://github.com/reddavis/distance_measure"
     gem.authors = ["reddavis"]

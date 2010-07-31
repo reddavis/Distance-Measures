@@ -1,6 +1,17 @@
 #include <ruby.h>
 #include <math.h>
 
+/*
+
+def euclidean_distance(other)
+  sum = 0.0
+  self.each_index do |i|
+    sum += (self[i] - other[i])**2
+  end
+  Math.sqrt(sum)
+end
+
+*/
 static VALUE rb_euclidean_distance(VALUE self, VALUE other_array) {
   double value = 0.0;
 

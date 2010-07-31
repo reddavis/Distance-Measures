@@ -9,9 +9,10 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["reddavis"]
-  s.date = %q{2010-01-26}
-  s.description = %q{A bundle of distance measures}
+  s.date = %q{2010-07-31}
+  s.description = %q{A bundle of distance measures with C extensions for the slow bits}
   s.email = %q{reddavis@gmail.com}
+  s.extensions = ["ext/core/extconf.rb", "ext/euclidean_distance/extconf.rb"]
   s.extra_rdoc_files = [
     "LICENSE",
      "README.rdoc"
@@ -24,10 +25,14 @@ Gem::Specification.new do |s|
      "Rakefile",
      "VERSION",
      "distance_measures.gemspec",
+     "ext/core/core.c",
+     "ext/core/extconf.rb",
+     "ext/euclidean_distance/euclidean_distance.c",
+     "ext/euclidean_distance/extconf.rb",
      "lib/distance_measures.rb",
-     "lib/distance_measures/core.rb",
+     "lib/distance_measures/core.bundle",
      "lib/distance_measures/cosine_similarity.rb",
-     "lib/distance_measures/euclidean_distance.rb",
+     "lib/distance_measures/euclidean_distance.bundle",
      "lib/distance_measures/jaccard.rb",
      "lib/distance_measures/tanimoto_coefficient.rb",
      "spec/distance_measures_spec.rb",
@@ -37,8 +42,8 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/reddavis/distance_measure}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.5}
-  s.summary = %q{A bundle of distance measures}
+  s.rubygems_version = %q{1.3.6}
+  s.summary = %q{A bundle of distance measures with C extensions for the slow bits}
   s.test_files = [
     "spec/distance_measures_spec.rb",
      "spec/spec_helper.rb"
