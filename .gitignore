@@ -18,5 +18,6 @@ coverage
 rdoc
 pkg
 tmp/*
+benchmarks/*
 
 ## PROJECT::SPECIFIC

@@ -33,18 +33,18 @@ class Array
     intersects
   end
 
-  def binary_union_with(other)
-    unions = []
-    self.each_with_index do |n, index|
-      if n == 1 || other[index] == 1
-        unions << 1
-      else
-        unions << 0
-      end
-    end
-
-    unions
-  end
+  #def binary_union_with(other)
+  #  unions = []
+  #  self.each_with_index do |n, index|
+  #    if n == 1 || other[index] == 1
+  #      unions << 1
+  #    else
+  #      unions << 0
+  #    end
+  #  end
+  #
+  #  unions
+  #end
 
   private
 

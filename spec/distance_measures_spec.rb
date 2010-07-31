@@ -14,7 +14,7 @@ describe "DistanceMeasures" do
 
   describe "Cosine Similarity" do
     it "should return 1.0" do
-      array.cosine_similarity(array).should > 0.99
+      array.cosine_similarity(array).should.to_s == "1.0" # WTF
     end
 
     it "should handle NaN's" do
