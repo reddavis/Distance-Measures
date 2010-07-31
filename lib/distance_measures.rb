@@ -9,15 +9,6 @@ require 'distance_measures/jaccard'
 class Array
   include DistanceMeasures
 
-  #def dot_product(other)
-  #  sum = 0.0
-  #  self.each_with_index do |n, index|
-  #    sum += n * other[index]
-  #  end
-  #
-  #  sum
-  #end
-
   def euclidean_normalize
     sum = 0.0
     self.each do |n|
@@ -25,10 +16,6 @@ class Array
     end
 
     Math.sqrt(sum)
-  end
-
-  def sum_of_squares
-    inject(0) {|sum, n| sum + n ** 2}
   end
 
   # http://en.wikipedia.org/wiki/Intersection_(set_theory)
