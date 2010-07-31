@@ -9,15 +9,6 @@ require 'distance_measures/jaccard'
 class Array
   include DistanceMeasures
 
-  def euclidean_normalize
-    sum = 0.0
-    self.each do |n|
-      sum += n ** 2
-    end
-
-    Math.sqrt(sum)
-  end
-
   # http://en.wikipedia.org/wiki/Intersection_(set_theory)
   def intersection_with(other)
     (self & other)

@@ -94,6 +94,12 @@ describe "DistanceMeasures" do
     end
   end
 
+  describe "Euclidean normalize" do
+    it "should" do
+      [10].euclidean_normalize.should == 10
+    end
+  end
+
   private
 
   def array
