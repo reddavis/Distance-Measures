@@ -123,7 +123,43 @@ static VALUE rb_binary_union_with(VALUE self, VALUE other_array) {
   return results;
 }
 
-// return the size of a Ruby array
+/*
+
+def binary_intersection_with(other)
+  intersects = []
+  self.each_with_index do |n, index|
+    if n == 1 && other[index] == 1
+      intersects << 1
+    else
+      intersects << 0
+    end
+  end
+
+  intersects
+end
+
+*/
+static VALUE rb_binary_intersection_with(VALUE self, VALUE other_array) {
+  //TODO: check arrays are same size
+  long array_size = c_array_size(self);
+  int index;
+  VALUE results = rb_ary_new();
+
+  for(index = 0; index <= array_size; index++) {
+    int self_attribute = NUM2INT(RARRAY(self)->ptr[index]);
+    int other_array_attribute = NUM2INT(RARRAY(other_array)->ptr[index]);
+
+    if(self_attribute == 1 && other_array_attribute == 1) {
+      rb_ary_push(results, rb_int_new(1));
+    } else {
+      rb_ary_push(results, rb_int_new(0));
+    }
+  }
+
+  return results;
+}
+
+// return the size of a Ruby array - 1
 long c_array_size(VALUE array) {
   return (RARRAY(array)->len - 1);
 }
@@ -134,4 +170,5 @@ void Init_core() {
   rb_define_method(distance_measures, "sum_of_squares", rb_sum_of_squares, 0);
   rb_define_method(distance_measures, "euclidean_normalize", rb_euclidean_normalize, 0);
   rb_define_method(distance_measures, "binary_union_with", rb_binary_union_with, 1);
+  rb_define_method(distance_measures, "binary_intersection_with", rb_binary_intersection_with, 1);
 }

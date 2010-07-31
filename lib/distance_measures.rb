@@ -19,33 +19,6 @@ class Array
     (self + other).uniq
   end
 
-  # 1's & 0's
-  def binary_intersection_with(other)
-    intersects = []
-    self.each_with_index do |n, index|
-      if n == 1 && other[index] == 1
-        intersects << 1
-      else
-        intersects << 0
-      end
-    end
-
-    intersects
-  end
-
-  #def binary_union_with(other)
-  #  unions = []
-  #  self.each_with_index do |n, index|
-  #    if n == 1 || other[index] == 1
-  #      unions << 1
-  #    else
-  #      unions << 0
-  #    end
-  #  end
-  #
-  #  unions
-  #end
-
   private
 
   # Checks if we're dealing with NaN's and will return 0.0 unless
