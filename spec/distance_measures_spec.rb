@@ -88,6 +88,12 @@ describe "DistanceMeasures" do
     end
   end
 
+  describe "Dot Product" do
+    it "should return 50" do
+      [5, 5].dot_product([5, 5]).should == 50.0
+    end
+  end
+
   private
 
   def array

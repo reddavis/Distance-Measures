@@ -4,7 +4,8 @@
 static VALUE rb_euclidean_distance(VALUE self, VALUE other_array) {
   double value = 0.0;
 
-  long vector_length = (RARRAY(self)->len - 1); // Both should be the same - TODO check!
+  //TODO: check they're the same size
+  long vector_length = (RARRAY(self)->len - 1);
   int index;
 
   for(index = 0; index <= vector_length; index++) {

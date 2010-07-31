@@ -37,6 +37,11 @@ Rake::ExtensionTask.new('euclidean_distance') do |ext|
   ext.lib_dir = File.join('lib', 'distance_measures')
 end
 
+# Core
+Rake::ExtensionTask.new('core') do |ext|
+  ext.lib_dir = File.join('lib', 'distance_measures')
+end
+
 task :spec => :check_dependencies
 task :default => :spec
 
