@@ -21,3 +21,4 @@ tmp/*
 benchmarks/*
 
 ## PROJECT::SPECIFIC
+*.bundle
