@@ -1,5 +1,6 @@
 #include <ruby.h>
 #include <math.h>
+#include "../19_fix/19_fix.c"
 
 /*
 
@@ -16,14 +17,14 @@ static VALUE rb_euclidean_distance(VALUE self, VALUE other_array) {
   double value = 0.0;
 
   //TODO: check they're the same size
-  long vector_length = (RARRAY(self)->len - 1);
+  long vector_length = (RARRAY_LEN(self) - 1);
   int index;
 
   for(index = 0; index <= vector_length; index++) {
     double x, y;
 
-    x = NUM2DBL(RARRAY(self)->ptr[index]);
-    y = NUM2DBL(RARRAY(other_array)->ptr[index]);
+    x = NUM2DBL(RARRAY_PTR(self)[index]);
+    y = NUM2DBL(RARRAY_PTR(other_array)[index]);
 
     value += pow(x - y, 2);
   }
