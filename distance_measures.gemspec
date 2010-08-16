@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{distance_measures}
-  s.version = "0.0.2"
+  s.version = "0.0.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["reddavis"]
-  s.date = %q{2010-07-31}
+  s.date = %q{2010-08-15}
   s.description = %q{A bundle of distance measures with C extensions for the slow bits}
   s.email = %q{reddavis@gmail.com}
   s.extensions = ["ext/core/extconf.rb", "ext/euclidean_distance/extconf.rb"]
@@ -25,14 +25,13 @@ Gem::Specification.new do |s|
      "Rakefile",
      "VERSION",
      "distance_measures.gemspec",
+     "ext/19_fix/19_fix.c",
      "ext/core/core.c",
      "ext/core/extconf.rb",
      "ext/euclidean_distance/euclidean_distance.c",
      "ext/euclidean_distance/extconf.rb",
      "lib/distance_measures.rb",
-     "lib/distance_measures/core.bundle",
      "lib/distance_measures/cosine_similarity.rb",
-     "lib/distance_measures/euclidean_distance.bundle",
      "lib/distance_measures/jaccard.rb",
      "lib/distance_measures/tanimoto_coefficient.rb",
      "spec/distance_measures_spec.rb",
