@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{distance_measures}
-  s.version = "0.0.3"
+  s.version = "0.0.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["reddavis"]
-  s.date = %q{2010-08-16}
+  s.date = %q{2010-09-11}
   s.description = %q{A bundle of distance measures with C extensions for the slow bits}
   s.email = %q{reddavis@gmail.com}
   s.extensions = ["ext/core/extconf.rb", "ext/euclidean_distance/extconf.rb"]
