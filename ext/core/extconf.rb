@@ -1,2 +1,2 @@
 require 'mkmf'
-create_makefile('core/core')
+create_makefile('distance_measures/core')

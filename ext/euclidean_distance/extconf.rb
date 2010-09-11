@@ -1,2 +1,2 @@
 require 'mkmf'
-create_makefile('euclidean_distance/euclidean_distance')
+create_makefile('distance_measures/euclidean_distance')
