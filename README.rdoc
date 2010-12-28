@@ -26,6 +26,8 @@ A bunch of distance measures that extend Array.
   
   a.tanimoto_coefficient(b)
   
+  a.haversine_distance(b)
+  
 This may or may not be the complete list, best thing is to check the source code.
   
 There are also a couple bonus methods:

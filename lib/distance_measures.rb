@@ -5,6 +5,7 @@ require 'distance_measures/euclidean_distance'
 require 'distance_measures/tanimoto_coefficient'
 require 'distance_measures/core'
 require 'distance_measures/jaccard'
+require 'distance_measures/haversine'
 
 class Array
   include DistanceMeasures
