@@ -18,7 +18,7 @@ describe "DistanceMeasures" do
     end
 
     it "should handle NaN's" do
-      [0.0, 0.0].cosine_similarity([0.0, 0.0]).nan?.should be_false
+      [0.0, 0.0].cosine_similarity([0.0, 0.0]).nan?.should be false
     end
   end
 
@@ -28,7 +28,7 @@ describe "DistanceMeasures" do
     end
 
     it "should handle NaN's" do
-      [0.0, 0.0].tanimoto_coefficient([0.0, 0.0]).nan?.should be_false
+      [0.0, 0.0].tanimoto_coefficient([0.0, 0.0]).nan?.should be false
     end
   end
 
@@ -100,6 +100,12 @@ describe "DistanceMeasures" do
     end
   end
 
+  describe "Hemming distance" do
+    it "should return 2" do
+      array_hemm_1.hemming_xor_distance(array_hemm_2) == 2
+    end
+  end
+
   private
 
   def array
@@ -112,6 +118,14 @@ describe "DistanceMeasures" do
 
   def array_3
     [4,1,9,7,5]
+  end
+
+  def array_hemm_1
+    [1,2,3]
+  end
+
+  def array_hemm_2
+    [3,2,1]
   end
 
 end
