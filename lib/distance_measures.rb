@@ -7,6 +7,7 @@ require 'distance_measures/core'
 require 'distance_measures/jaccard'
 require 'distance_measures/haversine'
 require 'distance_measures/hemming'
+require 'distance_measures/jensen_shannon'
 
 class Array
   include DistanceMeasures
