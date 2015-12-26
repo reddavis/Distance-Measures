@@ -9,8 +9,26 @@ require 'distance_measures/haversine'
 require 'distance_measures/hemming'
 require 'distance_measures/jensen_shannon'
 
+module MetricObject
+
+  def calc_distance(other, measure = nil, &distance)
+    if distance
+      yield self.coords, other.coords
+    else
+      if measure
+        # it performs many str cmp =(
+        self.coords.send(measure, other.coords)
+      else
+        throw "No metric"
+      end
+    end
+  end
+  
+end
+
 class Array
   include DistanceMeasures
+  include MetricObject
 
   # http://en.wikipedia.org/wiki/Intersection_(set_theory)
   def intersection_with(other)
@@ -30,3 +48,4 @@ class Array
     result.nan? ? 0.0 : result
   end
 end
+

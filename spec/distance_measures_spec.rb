@@ -1,5 +1,17 @@
 require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 
+class CartesianPointTest
+  include MetricObject
+  def initialize(x, y)
+    @x, @y = x, y
+  end
+
+  def coords
+    return [@x, @y]
+  end
+
+end
+
 describe "DistanceMeasures" do
 
   describe "Euclidean Distance" do
@@ -129,7 +141,14 @@ describe "DistanceMeasures" do
 
   describe "Hemming distance" do
     it "should return 2" do
-      array_hemm_1.hemming_xor_distance(array_hemm_2) == 2
+      array_hemm_1.hemming_xor_distance(array_hemm_2).should eq(2)
+    end
+  end
+
+  describe "With mixin" do
+    it "should calc distance in objects" do
+      CartesianPointTest.new(1,2).calc_distance(CartesianPointTest.new(2,1)){|x,y| x.euclidean_distance(y)}.should be_within(0.01).of( Math.sqrt((2-1)**2 + (1-2)**2))
+      CartesianPointTest.new(1,2).calc_distance(CartesianPointTest.new(2,1), :euclidean_distance).should be_within(0.01).of( Math.sqrt((2-1)**2 + (1-2)**2))
     end
   end
 
