@@ -11,6 +11,9 @@ require 'distance_measures/jensen_shannon'
 
 module MetricObject
 
+  # Mixin to add ability for any object,
+  # which implements coords, 
+  # to calc distance with 'calc_distance' function
   def calc_distance(other, measure = nil, &distance)
     if distance
       yield self.coords, other.coords
