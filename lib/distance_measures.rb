@@ -23,7 +23,7 @@ module MetricObject
       end
     end
   end
-  
+
 end
 
 class Array
@@ -33,6 +33,10 @@ class Array
   # http://en.wikipedia.org/wiki/Intersection_(set_theory)
   def intersection_with(other)
     (self & other)
+  end
+
+  def coords
+    self
   end
 
   # http://en.wikipedia.org/wiki/Union_(set_theory)
