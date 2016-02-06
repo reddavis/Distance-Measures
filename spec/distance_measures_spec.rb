@@ -147,8 +147,8 @@ describe "DistanceMeasures" do
 
   describe "With mixin" do
     it "should calc distance in objects" do
-      CartesianPointTest.new(1,2).calc_distance(CartesianPointTest.new(2,1)){|x,y| x.euclidean_distance(y)}.should be_within(0.01).of( Math.sqrt((2-1)**2 + (1-2)**2))
-      CartesianPointTest.new(1,2).calc_distance(CartesianPointTest.new(2,1), :euclidean_distance).should be_within(0.01).of( Math.sqrt((2-1)**2 + (1-2)**2))
+      CartesianPointTest.new(1,2).distance(CartesianPointTest.new(2,1)){|x,y| x.euclidean_distance(y)}.should be_within(0.01).of( Math.sqrt((2-1)**2 + (1-2)**2))
+      CartesianPointTest.new(1,2).distance(CartesianPointTest.new(2,1), :euclidean_distance).should be_within(0.01).of( Math.sqrt((2-1)**2 + (1-2)**2))
     end
   end
 
